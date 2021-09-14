@@ -21,7 +21,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
+        TODO("Not yet implemented")
         //TODO: Establish bindings
 
         //TODO: Define and assign Representative adapter
@@ -47,6 +47,7 @@ class DetailFragment : Fragment() {
     }
 
     private fun isPermissionGranted() : Boolean {
+        TODO("Not yet implemented")
         //TODO: Check if permission is already granted and return (true = granted, false = denied/other)
     }
 

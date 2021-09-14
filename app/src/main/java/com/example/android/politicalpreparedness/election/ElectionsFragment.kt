@@ -13,7 +13,7 @@ class ElectionsFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
+        TODO("Not yet implemented")
         //TODO: Add ViewModel values and create ViewModel
 
         //TODO: Add binding values
