@@ -64,6 +64,7 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit: $version_retrofit"
     implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$version_retrofit_coroutines_adapter"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
 
     // Moshi
     implementation "com.squareup.moshi:moshi:$version_moshi"
@@ -80,4 +81,9 @@ dependencies {
 
     // Location
     implementation "com.google.android.gms:play-services-location:$version_play_services_location"
+
+    // Koin for Android
+    implementation "org.koin:koin-android:2.2.2"
+    implementation "org.koin:koin-android-scope:2.2.2"
+    implementation "org.koin:koin-android-viewmodel:2.2.2"
 }

@@ -1,16 +1,61 @@
 package com.example.android.politicalpreparedness.election
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.android.politicalpreparedness.network.models.Election
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
 
-//TODO: Construct ViewModel and provide election datasource
-class ElectionsViewModel: ViewModel() {
+class ElectionsViewModel(
+    private val datasource: ElectionRepository
+) : ViewModel() {
 
-    //TODO: Create live data val for upcoming elections
+    private val _message = MutableLiveData<String>()
+    val message: LiveData<String> get() = _message
 
-    //TODO: Create live data val for saved elections
+    private val _elections = MutableLiveData<List<Election>>()
+    val elections: LiveData<List<Election>> get() = _elections
 
-    //TODO: Create val and functions to populate live data for upcoming elections from the API and saved elections from local database
+    private val _savedElections = MutableLiveData<List<Election>>()
+    val savedElections: LiveData<List<Election>> get() = _savedElections
 
-    //TODO: Create functions to navigate to saved or upcoming election voter info
+    lateinit var selectedElection: Election
 
+    private val _navigateToElectionVoterInfo = MutableLiveData(false)
+    val navigateToElectionVoterInfo: LiveData<Boolean> get() = _navigateToElectionVoterInfo
+
+    init {
+        getUpcomingElections()
+        getSavedElections()
+    }
+
+    private fun getUpcomingElections() {
+        viewModelScope.launch {
+            with(Dispatchers.IO) {
+                val result: List<Election> = try {
+                    datasource.getElections()
+                } catch (e: HttpException) {
+                    _message.postValue("Sorry, something went wrong, please try again")
+                    emptyList()
+                }
+                _elections.postValue(result)
+            }
+        }
+    }
+
+    private fun getSavedElections() {
+        TODO("Not yet implemented")
+    }
+
+    fun navigateToElectionVoterInfo(election: Election) {
+        selectedElection = election
+        _navigateToElectionVoterInfo.value = true
+    }
+
+    fun setNavigateToElectionVoterInfoComplete() {
+        _navigateToElectionVoterInfo.value = false
+    }
 }
