@@ -16,7 +16,7 @@ class RepresentativeViewModel(
     private val dataSource: ElectionRepository
 ) : ViewModel() {
 
-    val address: Address = Address("", "", "", "", "")
+    var address: Address = Address("", "", "", "", "")
 
     private val _representatives = MutableLiveData<List<Representative>>()
     val representative: LiveData<List<Representative>> get() = _representatives
@@ -58,7 +58,4 @@ class RepresentativeViewModel(
             else -> true
         }
     }
-
-    //TODO: Create function get address from geo location
-
 }
