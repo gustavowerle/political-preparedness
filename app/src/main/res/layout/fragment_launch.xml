@@ -10,28 +10,18 @@
 
         <Button
             android:id="@+id/buttonFindMyRepresentatives"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            style="@style/primary_button"
             android:layout_marginBottom="24dp"
-            android:backgroundTint="@color/colorPrimary"
             android:text="@string/find_my_representatives"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/buttonUpcomingElections"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            style="@style/primary_button"
             android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/colorPrimary"
             android:text="@string/upcoming_elections"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/buttonFindMyRepresentatives"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

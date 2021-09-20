@@ -20,18 +20,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            android:padding="@dimen/default_padding"
             android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textToolbarTitle"
+                style="@style/text_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/loading"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="18dp" />
         </androidx.appcompat.widget.Toolbar>
@@ -40,7 +40,7 @@
             android:id="@+id/election_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/default_padding"
+            android:layout_margin="16dp"
             android:textAlignment="center"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/election_name"
@@ -49,13 +49,11 @@
 
         <TextView
             android:id="@+id/state_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/text_title"
             android:layout_marginTop="8dp"
             android:text="@string/election_information"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/election_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/election_date" />
 
         <!-- TODO: Add click binding to open web URL -->
@@ -102,15 +100,10 @@
 
         <Button
             android:id="@+id/buttonFollow"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            style="@style/primary_button"
             android:layout_marginBottom="24dp"
-            android:backgroundTint="@color/colorPrimary"
             android:onClick="@{() -> viewModel.handleSaveButtonClick()}"
             android:text="@string/follow_election"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

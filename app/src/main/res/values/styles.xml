@@ -9,6 +9,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- TODO: Add necessary styles -->
+    <style name="primary_button">
+        <item name="android:layout_width">@dimen/default_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/medium_space</item>
+        <item name="android:layout_marginEnd">@dimen/medium_space</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="text_title">
+        <item name="android:layout_width">@dimen/default_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/medium_space</item>
+        <item name="android:layout_marginEnd">@dimen/medium_space</item>
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
