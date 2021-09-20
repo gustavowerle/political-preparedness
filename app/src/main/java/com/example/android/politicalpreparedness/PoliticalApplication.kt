@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.android.politicalpreparedness.database.database
 import com.example.android.politicalpreparedness.election.election
 import com.example.android.politicalpreparedness.network.networkModule
+import com.example.android.politicalpreparedness.representative.representative
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -18,7 +19,8 @@ class PoliticalApplication : Application() {
             modules(
                 database,
                 networkModule,
-                election
+                election,
+                representative
             )
         }
     }

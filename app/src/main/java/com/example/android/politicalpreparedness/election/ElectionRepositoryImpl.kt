@@ -3,9 +3,10 @@ package com.example.android.politicalpreparedness.election
 import androidx.lifecycle.LiveData
 import com.example.android.politicalpreparedness.database.ElectionDao
 import com.example.android.politicalpreparedness.network.CivicsApiService
+import com.example.android.politicalpreparedness.network.models.Address
 import com.example.android.politicalpreparedness.network.models.Election
+import com.example.android.politicalpreparedness.network.models.RepresentativeResponse
 import com.example.android.politicalpreparedness.network.models.VoterInfoResponse
-import com.example.android.politicalpreparedness.representative.model.Representative
 import retrofit2.HttpException
 
 class ElectionRepositoryImpl(
@@ -43,8 +44,8 @@ class ElectionRepositoryImpl(
         return result > 0
     }
 
-    override suspend fun getRepresentatives(): List<Representative> {
-        TODO("Not yet implemented")
+    override suspend fun getRepresentatives(address: Address): RepresentativeResponse {
+        return rest.getRepresentativesByAddress(address.toFormattedString())
     }
 
 }

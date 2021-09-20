@@ -3,13 +3,21 @@
     <string name="app_name">Political Preparedness</string>
     <string name="loading">Loading…</string>
     <string name="find_my_representatives">Find my representatives</string>
-    <string name="upcoming_elections">Upcoming Elections</string>
+    <string name="upcoming_elections">Upcoming elections</string>
     <string name="a_ballot_image">A ballot image</string>
-    <string name="saved_elections">Saved Elections</string>
+    <string name="saved_elections">Saved elections</string>
     <string name="follow_election">Follow election</string>
     <string name="unfollow_election">Unfollow election</string>
-    <string name="election_information">Election Information</string>
+    <string name="election_information">Election information</string>
     <string name="voting_locations">Voting locations</string>
-    <string name="ballot_information">Ballot Information</string>
+    <string name="ballot_information">Ballot information</string>
+    <string name="search_representative">Search representative</string>
+    <string name="representatives">Representatives</string>
+    <string name="use_my_location">Use my location</string>
+    <string name="search">Search</string>
+    <string name="address_line_1">Address line 1</string>
+    <string name="address_line_2">Address line 2</string>
+    <string name="city">City</string>
+    <string name="zip">Zip code</string>
 
 </resources>

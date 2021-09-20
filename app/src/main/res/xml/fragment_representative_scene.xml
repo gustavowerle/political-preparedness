@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start" />
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/textSearchTitle"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/editTextAddressLine1"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/editTextAddressLine2"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/editTextCity"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/spinnerState"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/editTextZip"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/buttonSearch"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/buttonLocation"
+            android:visibility="gone" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="2000">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/recyclerRepresentatives"
+            app:touchAnchorSide="top" />
+
+    </Transition>
+</MotionScene>
