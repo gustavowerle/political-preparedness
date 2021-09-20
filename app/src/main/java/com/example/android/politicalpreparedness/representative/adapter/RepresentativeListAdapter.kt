@@ -66,17 +66,17 @@ class RepresentativeViewHolder(val binding: ItemRepresentativeBinding) :
     private fun showSocialLinks(channels: List<Channel>) {
         val facebookUrl = getFacebookUrl(channels)
         if (!facebookUrl.isNullOrBlank()) {
-            enableLink(binding.facebookIcon, facebookUrl)
+            enableLink(binding.imageFacebookIcon, facebookUrl)
         }
 
         val twitterUrl = getTwitterUrl(channels)
         if (!twitterUrl.isNullOrBlank()) {
-            enableLink(binding.twitterIcon, twitterUrl)
+            enableLink(binding.imageTwitterIcon, twitterUrl)
         }
     }
 
     private fun showWWWLinks(urls: List<String>) {
-        enableLink(binding.wwwIcon, urls.first())
+        enableLink(binding.imageWwwIcon, urls.first())
     }
 
     private fun getFacebookUrl(channels: List<Channel>): String? {
