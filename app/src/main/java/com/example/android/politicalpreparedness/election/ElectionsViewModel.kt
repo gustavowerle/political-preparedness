@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.android.politicalpreparedness.network.models.Election
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
 class ElectionsViewModel(
@@ -19,8 +20,7 @@ class ElectionsViewModel(
     private val _elections = MutableLiveData<List<Election>>()
     val elections: LiveData<List<Election>> get() = _elections
 
-    private val _savedElections = MutableLiveData<List<Election>>()
-    val savedElections: LiveData<List<Election>> get() = _savedElections
+    val savedElections: LiveData<List<Election>> get() = datasource.getSavedElectionsLiveData()
 
     lateinit var selectedElection: Election
 
@@ -29,12 +29,11 @@ class ElectionsViewModel(
 
     init {
         getUpcomingElections()
-        getSavedElections()
     }
 
     private fun getUpcomingElections() {
         viewModelScope.launch {
-            with(Dispatchers.IO) {
+            withContext(Dispatchers.IO) {
                 val result: List<Election> = try {
                     datasource.getElections()
                 } catch (e: HttpException) {
@@ -44,10 +43,6 @@ class ElectionsViewModel(
                 _elections.postValue(result)
             }
         }
-    }
-
-    private fun getSavedElections() {
-        TODO("Not yet implemented")
     }
 
     fun navigateToElectionVoterInfo(election: Election) {

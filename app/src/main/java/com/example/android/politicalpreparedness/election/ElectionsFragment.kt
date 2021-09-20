@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.databinding.FragmentElectionBinding
@@ -34,6 +35,18 @@ class ElectionsFragment : Fragment() {
             }
         })
 
+        viewModel.navigateToElectionVoterInfo.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                findNavController().navigate(
+                    ElectionsFragmentDirections.actionElectionsFragmentToVoterInfoFragment(
+                        viewModel.selectedElection.id,
+                        viewModel.selectedElection.division
+                    )
+                )
+                viewModel.setNavigateToElectionVoterInfoComplete()
+            }
+        })
+
         val clickListener = ElectionListAdapter.ElectionListener {
             viewModel.navigateToElectionVoterInfo(it)
         }
@@ -54,7 +67,4 @@ class ElectionsFragment : Fragment() {
 
         return binding.root
     }
-
-    //TODO: Refresh adapters when fragment loads
-
 }

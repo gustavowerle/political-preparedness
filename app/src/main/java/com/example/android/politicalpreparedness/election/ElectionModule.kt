@@ -12,6 +12,9 @@ val election = module {
     viewModel {
         ElectionsViewModel(get())
     }
+    viewModel {
+        VoterInfoViewModel(get())
+    }
 }
 
 private fun provideElectionRepository(
