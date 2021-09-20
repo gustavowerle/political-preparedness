@@ -28,8 +28,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerUpcomingElections"
-            android:layout_width="@dimen/default_width"
-            android:layout_height="@dimen/default_width"
+            android:layout_width="@dimen/match_constraints"
+            android:layout_height="@dimen/match_constraints"
             android:layout_marginStart="@dimen/medium_space"
             android:layout_marginTop="@dimen/small_space"
             android:layout_marginEnd="@dimen/medium_space"
@@ -50,8 +50,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerSavedElections"
-            android:layout_width="@dimen/default_width"
-            android:layout_height="@dimen/default_width"
+            android:layout_width="@dimen/match_constraints"
+            android:layout_height="@dimen/match_constraints"
             android:layout_marginStart="@dimen/medium_space"
             android:layout_marginTop="@dimen/small_space"
             android:layout_marginEnd="@dimen/medium_space"

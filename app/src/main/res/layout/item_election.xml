@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/textElectionName"
-        android:layout_width="@dimen/default_width"
+        android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:text="@string/loading"
         android:textSize="@dimen/medium_text_size"
@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/textElectionDay"
-        android:layout_width="@dimen/default_width"
+        android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/micro_space"
         android:text="@string/loading"

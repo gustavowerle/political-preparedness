@@ -100,7 +100,7 @@
 
         <TextView
             android:id="@+id/address"
-            android:layout_width="@dimen/default_width"
+            android:layout_width="@dimen/match_constraints"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/micro_space"
             android:text="@{viewModel.voterInfo.state.get(0).electionAdministrationBody.correspondenceAddress.toFormattedString()}"

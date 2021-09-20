@@ -10,7 +10,7 @@
     </style>
 
     <style name="primary_button">
-        <item name="android:layout_width">@dimen/default_width</item>
+        <item name="android:layout_width">@dimen/match_constraints</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/medium_space</item>
         <item name="android:layout_marginEnd">@dimen/medium_space</item>
@@ -19,7 +19,7 @@
     </style>
 
     <style name="text_title">
-        <item name="android:layout_width">@dimen/default_width</item>
+        <item name="android:layout_width">@dimen/match_constraints</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/medium_space</item>
         <item name="android:layout_marginEnd">@dimen/medium_space</item>

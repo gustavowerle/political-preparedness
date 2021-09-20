@@ -50,7 +50,7 @@
 
         <EditText
             android:id="@+id/editTextCity"
-            android:layout_width="@dimen/default_width"
+            android:layout_width="@dimen/match_constraints"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/city"
@@ -62,7 +62,7 @@
 
         <Spinner
             android:id="@+id/spinnerState"
-            android:layout_width="@dimen/default_width"
+            android:layout_width="@dimen/match_constraints"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:inputType="textPostalAddress"
@@ -73,7 +73,7 @@
 
         <EditText
             android:id="@+id/editTextZip"
-            android:layout_width="@dimen/default_width"
+            android:layout_width="@dimen/match_constraints"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/zip"

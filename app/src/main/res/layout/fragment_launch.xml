@@ -29,7 +29,7 @@
         <ImageView
             android:id="@+id/imageLogo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/match_constraints"
             android:contentDescription="@string/a_ballot_image"
             app:layout_constraintBottom_toTopOf="@+id/buttonUpcomingElections"
             app:layout_constraintEnd_toEndOf="parent"
