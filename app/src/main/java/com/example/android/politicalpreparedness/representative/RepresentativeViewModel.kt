@@ -10,7 +10,6 @@ import com.example.android.politicalpreparedness.representative.model.Representa
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.HttpException
 
 class RepresentativeViewModel(
     private val dataSource: ElectionRepository
@@ -33,8 +32,8 @@ class RepresentativeViewModel(
                         _representatives.postValue(offices.flatMap { office ->
                             office.getRepresentatives(officials)
                         })
-                    } catch (e: HttpException) {
-                        _message.postValue("No representative found")
+                    } catch (e: Exception) {
+                        _message.postValue("Sorry, something went wrong, please try again")
                     }
                 }
             }

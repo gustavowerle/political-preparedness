@@ -9,7 +9,6 @@ import com.example.android.politicalpreparedness.network.models.VoterInfoRespons
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.HttpException
 
 class VoterInfoViewModel(
     private val repository: ElectionRepository
@@ -38,7 +37,7 @@ class VoterInfoViewModel(
                     _voterInfo.postValue(response)
                     checkElectionIsSaved(response.election.id)
                     _isLoading.postValue(false)
-                } catch (e: HttpException) {
+                } catch (e: Exception) {
                     _errorMessage.postValue("There isn't detail data to show about this election")
                 }
             }

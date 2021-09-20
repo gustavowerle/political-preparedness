@@ -8,7 +8,6 @@ import com.example.android.politicalpreparedness.network.models.Election
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.HttpException
 
 class ElectionsViewModel(
     private val datasource: ElectionRepository
@@ -36,7 +35,7 @@ class ElectionsViewModel(
             withContext(Dispatchers.IO) {
                 val result: List<Election> = try {
                     datasource.getElections()
-                } catch (e: HttpException) {
+                } catch (e: Exception) {
                     _message.postValue("Sorry, something went wrong, please try again")
                     emptyList()
                 }
