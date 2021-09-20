@@ -20,8 +20,8 @@
             style="@style/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/micro_space"
+            android:layout_marginTop="@dimen/small_space"
             android:text="@string/search_representative"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +40,7 @@
         <EditText
             android:id="@+id/editTextAddressLine2"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/address_line_2"
             android:inputType="textPostalAddress"
@@ -50,7 +50,7 @@
 
         <EditText
             android:id="@+id/editTextCity"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/default_width"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/city"
@@ -62,8 +62,8 @@
 
         <Spinner
             android:id="@+id/spinnerState"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/default_width"
+            android:layout_height="wrap_content"
             android:autofillHints=""
             android:inputType="textPostalAddress"
             app:layout_constraintBottom_toBottomOf="@id/editTextCity"
@@ -73,7 +73,7 @@
 
         <EditText
             android:id="@+id/editTextZip"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/default_width"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/zip"
@@ -88,9 +88,9 @@
             android:id="@+id/buttonSearch"
             style="@style/primary_button"
             android:layout_width="match_parent"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginStart="@dimen/micro_space"
+            android:layout_marginTop="@dimen/small_space"
+            android:layout_marginEnd="@dimen/micro_space"
             android:text="@string/search"
             app:layout_constraintTop_toBottomOf="@id/editTextZip" />
 
@@ -98,8 +98,8 @@
             android:id="@+id/buttonLocation"
             style="@style/primary_button"
             android:layout_width="match_parent"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginStart="@dimen/micro_space"
+            android:layout_marginEnd="@dimen/micro_space"
             android:text="@string/use_my_location"
             app:layout_constraintTop_toBottomOf="@id/buttonSearch" />
 
@@ -108,8 +108,8 @@
             style="@style/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/micro_space"
+            android:layout_marginTop="@dimen/small_space"
             android:text="@string/representatives"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/buttonLocation" />
@@ -117,8 +117,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerRepresentatives"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:paddingBottom="32dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/big_space"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -127,7 +127,7 @@
         <TextView
             android:id="@+id/textListPlaceholder"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:textAlignment="center"
             android:visibility="gone"
