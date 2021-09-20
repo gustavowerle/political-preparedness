@@ -19,5 +19,8 @@
     <string name="address_line_2">Address line 2</string>
     <string name="city">City</string>
     <string name="zip">Zip code</string>
+    <string name="election_address">Election address</string>
+    <string name="ok">Ok</string>
+    <string name="error">Error</string>
 
 </resources>

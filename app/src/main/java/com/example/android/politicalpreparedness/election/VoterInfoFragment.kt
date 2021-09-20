@@ -1,11 +1,15 @@
 package com.example.android.politicalpreparedness.election
 
+import android.app.AlertDialog
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.databinding.FragmentVoterInfoBinding
@@ -29,7 +33,18 @@ class VoterInfoFragment : Fragment() {
         viewModel.voterInfo.observe(viewLifecycleOwner, Observer {
             binding.textToolbarTitle.text = it.election.name
             binding.electionDate.text = DateFormat.getDateInstance().format(it.election.electionDay)
+        })
 
+        viewModel.errorMessage.observe(viewLifecycleOwner, Observer {
+            context?.apply {
+                AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.error))
+                    .setMessage(it)
+                    .setNeutralButton(R.string.ok) { _, _ -> }
+                    .setOnDismissListener { findNavController().popBackStack() }
+                    .create()
+                    .show()
+            }
         })
 
         viewModel.isLoading.observe(viewLifecycleOwner, Observer { isLoading ->
@@ -44,12 +59,12 @@ class VoterInfoFragment : Fragment() {
             }
         })
 
-        /**
-        Hint: You will need to ensure proper data is provided from previous fragment.
-         */
-        viewModel.getVoterInfo(args.argElectionId, args.argDivision.country)
-
-        //TODO: Handle loading of URLs
+        val division = args.argDivision
+        if (division.state.isEmpty()) {
+            viewModel.getVoterInfo(args.argElectionId, division.country)
+        } else {
+            viewModel.getVoterInfo(args.argElectionId, "${division.country} - ${division.state}")
+        }
 
         viewModel.isSavedElection.observe(viewLifecycleOwner, Observer { isSavedElection ->
             if (isSavedElection) {
@@ -59,9 +74,11 @@ class VoterInfoFragment : Fragment() {
             }
         })
 
+        viewModel.url.observe(viewLifecycleOwner, Observer {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(it))
+            startActivity(intent)
+        })
+
         return binding.root
     }
-
-    //TODO: Create method to load URL intents
-
 }

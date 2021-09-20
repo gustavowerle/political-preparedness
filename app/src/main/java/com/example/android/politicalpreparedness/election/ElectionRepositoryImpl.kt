@@ -7,7 +7,6 @@ import com.example.android.politicalpreparedness.network.models.Address
 import com.example.android.politicalpreparedness.network.models.Election
 import com.example.android.politicalpreparedness.network.models.RepresentativeResponse
 import com.example.android.politicalpreparedness.network.models.VoterInfoResponse
-import retrofit2.HttpException
 
 class ElectionRepositoryImpl(
     private val dao: ElectionDao,
@@ -15,12 +14,7 @@ class ElectionRepositoryImpl(
 ) : ElectionRepository {
 
     override suspend fun getElections(): List<Election> {
-        val result: List<Election> = try {
-            rest.getElections().elections
-        } catch (e: HttpException) {
-            emptyList()
-        }
-        return result
+        return rest.getElections().elections
     }
 
     override suspend fun getVoterInfo(id: Int, address: String): VoterInfoResponse {
