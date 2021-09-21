@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.databinding.FragmentElectionBinding
 import com.example.android.politicalpreparedness.election.adapter.ElectionListAdapter
-import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ElectionsFragment : Fragment() {
 
-    private val viewModel: ElectionsViewModel by inject()
+    private val viewModel: ElectionsViewModel by viewModel()
     private lateinit var binding: FragmentElectionBinding
 
     override fun onCreateView(

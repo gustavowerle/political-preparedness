@@ -13,14 +13,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.databinding.FragmentVoterInfoBinding
-import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 import java.text.DateFormat
 
 class VoterInfoFragment : Fragment() {
 
     private val args: VoterInfoFragmentArgs by navArgs()
     private lateinit var binding: FragmentVoterInfoBinding
-    private val viewModel: VoterInfoViewModel by inject()
+    private val viewModel: VoterInfoViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,

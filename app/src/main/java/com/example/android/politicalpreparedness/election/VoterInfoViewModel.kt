@@ -29,6 +29,7 @@ class VoterInfoViewModel(
     var url = MutableLiveData<String>()
 
     fun getVoterInfo(id: Int, address: String) {
+        if (_voterInfo.value != null) return
         _isLoading.value = true
         viewModelScope.launch {
             withContext(Dispatchers.IO) {

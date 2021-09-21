@@ -23,13 +23,13 @@ import com.example.android.politicalpreparedness.databinding.FragmentRepresentat
 import com.example.android.politicalpreparedness.network.models.Address
 import com.example.android.politicalpreparedness.representative.adapter.RepresentativeListAdapter
 import com.google.android.gms.location.LocationServices
-import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
 class RepresentativeFragment : Fragment() {
 
     private lateinit var binding: FragmentRepresentativeBinding
-    private val viewModel: RepresentativeViewModel by inject()
+    private val viewModel: RepresentativeViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
