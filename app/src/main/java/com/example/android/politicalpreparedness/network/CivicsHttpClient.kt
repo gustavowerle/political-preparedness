@@ -19,8 +19,7 @@ class CivicsHttpClient : OkHttpClient() {
                     val url = original
                         .url
                         .newBuilder()
-//                        .addQueryParameter("key", BuildConfig.API_KEY)
-                        .addQueryParameter("key", "AIzaSyC57et-rMgrrp97n6h2JZ1zI4RBEinPXEo")
+                        .addQueryParameter("key", BuildConfig.API_KEY)
                         .build()
                     val request = original
                         .newBuilder()
